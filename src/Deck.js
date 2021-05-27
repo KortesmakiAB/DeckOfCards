@@ -9,35 +9,36 @@ const Deck = () => {
     
 
     useEffect(() => {
-        
-        try {
-            (async () => {
+    
+        (async () => {
+            try {
                 const resp = await axios.get('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1');
                 setDeckId(resp.data.deck_id);
-            })();
-        } catch (error) {
-            console.log("Error1")
-            console.error("error",error)
-        }
+            } catch (error) {
+                console.log("Error:",error)
+            }
+            
+        })();
         
     }, [])
 
     const handleClick = () => {
        
-        try {
-            (async () => {
+        (async () => {
+            try {
                 const resp = await axios.get(`https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=1`);
-                
+            
                 if (!resp.data.remaining) {
                     setCardsRemaining(false);
-                    alert('Error: no cards remaining!')
+                    alert ('Error: no cards remaining!')
                 }
-
+    
                 setDeck(() => [...deck, resp.data.cards[0]]);
-            })()
-        } catch (error) {
-            return error;
-        }
+            } catch (error) {
+                console.log('Error:', error)
+            }
+       
+        })()
     }
 
     return (
