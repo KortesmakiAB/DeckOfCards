@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
+import './Deck.css';
 import axios from 'axios';
 import Card from './Card';
+
 
 const Deck = () => {
     const [deckId, setDeckId] = useState(null);
@@ -55,7 +57,7 @@ const Deck = () => {
 
     return (
         <div className="Deck">
-            { cardsRemaining && <button onClick={ handleClick }>{ !isDrawing ? 'Start' : 'Stop' } Drawing</button>}
+            { cardsRemaining && <button className="Deck-btn" onClick={ handleClick }>{ !isDrawing ? 'Start' : 'Stop' } Drawing</button>}
             <div>
                 { deck.map(({ code, image, value, suit }) => 
                     <Card
