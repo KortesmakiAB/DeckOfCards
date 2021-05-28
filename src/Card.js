@@ -13,7 +13,7 @@ const Card = ({ imgUrl, cardVal }) => {
     const transform = `translate(${xPos}px, ${yPos}px) rotate(${angle}deg)`;
 
     return (
-        <img alt={ cardVal } src={ imgUrl } style={transform}></img>
+        <img className="Card" alt={ cardVal } src={ imgUrl } style={ {transform} }></img>
     );
 };
 

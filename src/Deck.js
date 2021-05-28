@@ -58,7 +58,7 @@ const Deck = () => {
     return (
         <div className="Deck">
             { cardsRemaining && <button className="Deck-btn" onClick={ handleClick }>{ !isDrawing ? 'Start' : 'Stop' } Drawing</button>}
-            <div>
+            <div className="Deck-cardArea">
                 { deck.map(({ code, image, value, suit }) => 
                     <Card
                     key={code}

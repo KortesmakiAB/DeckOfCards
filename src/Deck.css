@@ -1,3 +1,5 @@
+/* from solution code */
+
 .Deck {
   text-align: center;
 }
@@ -15,3 +17,6 @@
     cursor: pointer;
 }
 
+.Deck-cardArea {
+  margin-top: 80px;
+}
