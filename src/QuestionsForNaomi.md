@@ -1,2 +1,0 @@
-#### Deck.js Solution Code
-Line 64, why does the Solution Code list a function 'setAutoDraw' as a dependency to watch? I thought useEffect() only watches for changes in variables, I didn't think the reference to setAutoDraw() could change?
